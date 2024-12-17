@@ -1,3 +1,39 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Form Container -->
+    <div class="center-container">
+        <div class="form-box">
+            <h1>Diabetes Prediction</h1>
+            <!-- Form -->
+            <form action="{{ url_for('predict') }}" method="post">
+                <input type="text" name="AGE" placeholder="Enter Age" required />
+                <input type="text" name="SEX" placeholder="Enter Sex" required />
+                <input type="text" name="BMI" placeholder="Enter BMI" required />
+                <input type="text" name="BP" placeholder="Enter BP" required />
+                <input type="text" name="S1" placeholder="S1 Value" required />
+                <input type="text" name="S2" placeholder="S2 Value" required />
+                <input type="text" name="S3" placeholder="S3 Value" required />
+                <input type="text" name="S4" placeholder="S4 Value" required />
+                <input type="text" name="S5" placeholder="S5 Value" required />
+                <input type="text" name="S6" placeholder="S6 Value" required />
+
+                <button type="submit">Predict</button>
+            </form>
+            <div class="prediction">{{ prediction_text }}</div>
+        </div>
+    </div>
+</body>
+
+</html>
